@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "es2016",                     // JavaScript-ning versiyasi
+    "module": "commonjs",                  // Modul tizimi (Node.js uchun 'commonjs')
+    "rootDir": "./src",                    // TypeScript fayllarining manba katalogi
+    "outDir": "./dist",                    // JavaScript fayllarini qayerga chiqishini belgilash
+    "strict": true,                        // Katta xatoliklarni tekshirishni yoqish
+    "esModuleInterop": true,               // CommonJS va ES modullarni mos qilish
+    "skipLibCheck": true,                  // Kutubxonalar uchun tekshiruvni o'tkazib yuborish
+    "forceConsistentCasingInFileNames": true // Fayl nomlari uchun bir xil registr talab qilish
+  },
+  "include": ["src/**/*"],                 // Qaysi fayllar TypeScript tomonidan kompilyatsiya qilinadi
+  "exclude": ["node_modules"]              // Qaysi fayllar bundan mustasno
+}
