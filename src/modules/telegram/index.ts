@@ -14,7 +14,7 @@ export const sendToTelegram = async function (
     type: "photo",
     media: photoUrl,
     ...(index === 0 && {
-      // send caption only for 0 index image
+      // send caption only for 0 index image or the description does not appear in the post
       caption: `<b>${title}</b> \n\n<i>${description}</i>`,
       parse_mode: "HTML",
     }),

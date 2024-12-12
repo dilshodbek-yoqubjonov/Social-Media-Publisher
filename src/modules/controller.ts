@@ -14,11 +14,15 @@ const processRequest = async (req: any, res: any) => {
   // optional description
   const parsedDescription = description ? description : "";
 
-  sendToTelegram(title, parsedDescription, photos)
-    .then(() => console.log("Post send to Telegram successfully"))
-    .catch((err) =>
-      console.log("Error on sending post to Telegram: ", err.message)
-    );
+  try {
+    await sendToTelegram(title, parsedDescription, photos);
+    console.log("Post send to Telegram successfully");
+  } catch (err: any) {
+    return res.status(err.status || 403).send({
+      success: false,
+      message: "ERROR in sending to Telegram: " + err.message,
+    });
+  }
 
   res.status(200).json({ message: "Posts sent to social media successfully!" });
 };
